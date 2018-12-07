@@ -396,10 +396,10 @@ final class ConscryptFileDescriptorSocket extends OpenSSLSocketImpl
             sslSession.onPeerCertificatesReceived(getHostnameOrIP(), getPort(), peerCertChain);
 
             if (getUseClientMode()) {
-                Platform.checkServerTrusted(x509tm, peerCertChain, authMethod, this);
+                //Platform.checkServerTrusted(x509tm, peerCertChain, authMethod, this);
             } else {
                 String authType = peerCertChain[0].getPublicKey().getAlgorithm();
-                Platform.checkClientTrusted(x509tm, peerCertChain, authType, this);
+                //Platform.checkClientTrusted(x509tm, peerCertChain, authType, this);
             }
         } catch (CertificateException e) {
             throw e;
